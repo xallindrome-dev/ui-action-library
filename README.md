@@ -21,7 +21,7 @@
 To install this package in your project, authenticate to GitHub Packages and run the following command:
 
 ```bash
-npm install @your-company/my-library --registry=https://npm.pkg.github.com/
+npm install @@umbrage-studios/ui-action-library --registry=https://npm.pkg.github.com/
 ```
 
 Make sure you have your GitHub Personal Access Token (PAT) with the necessary permissions configured in your `.npmrc`.
@@ -33,7 +33,7 @@ Make sure you have your GitHub Personal Access Token (PAT) with the necessary pe
    First, clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-company/my-library.git
+   git clone https://github.com/@umbrage-studios/ui-action-library.git
    cd my-library
    ```
 
@@ -72,7 +72,10 @@ Make sure you have your GitHub Personal Access Token (PAT) with the necessary pe
 This package provides various utility functions for string manipulation, date formatting, and more. Example usage:
 
 ```typescript
-import { toTitleCase, nameToTwoLetters } from "@your-company/my-library";
+import {
+  toTitleCase,
+  nameToTwoLetters,
+} from "@@umbrage-studios/ui-action-library";
 
 const title = toTitleCase("hello world"); // "Hello World"
 const initials = nameToTwoLetters("John Doe"); // "JD"
