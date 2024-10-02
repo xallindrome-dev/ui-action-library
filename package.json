@@ -1,0 +1,34 @@
+{
+  "name": "ui-action-library",
+  "version": "1.0.0",
+  "main": "dist/ui-action-library.umd.js",
+  "module": "dist/ui-action-library.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "vite",
+    "test": "vitest",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "eslint": "^9.11.1",
+    "husky": "^9.1.6",
+    "prettier": "^3.3.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^28.0.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.0",
+    "rollup": "^4.24.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.7.0",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2"
+  }
+}
