@@ -1,8 +1,8 @@
-# My Library
+# UI Action Library
 
 ## Overview
 
-**My Library** is a collection of utility functions designed for internal use within our company. It provides various helpers, including string manipulation, date handling, and more. This package is private and distributed via GitHub Packages within our organization.
+**UI Action Library** is a collection of utility functions designed for internal use within our company. It provides various helpers, including string manipulation, date handling, and more. This package is private and distributed via GitHub Packages within our organization.
 
 ## Table of Contents
 
