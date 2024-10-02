@@ -21,7 +21,7 @@
 To install this package in your project, authenticate to GitHub Packages and run the following command:
 
 ```bash
-npm install @@umbrage-studios/ui-action-library --registry=https://npm.pkg.github.com/
+npm install @umbrage-studios/ui-action-library --registry=https://npm.pkg.github.com/
 ```
 
 Make sure you have your GitHub Personal Access Token (PAT) with the necessary permissions configured in your `.npmrc`.
