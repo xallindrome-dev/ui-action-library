@@ -1,10 +1,13 @@
 {
-  "name": "ui-action-library",
+  "name": "@umbrage-studios/ui-action-library",
   "version": "1.0.0",
   "main": "dist/ui-action-library.umd.js",
   "module": "dist/ui-action-library.esm.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "vite",
