@@ -59,12 +59,12 @@ Make sure you have your GitHub Personal Access Token (PAT) with the necessary pe
    //npm.pkg.github.com/:_authToken=YOUR_PERSONAL_ACCESS_TOKEN
    ```
 
-4. **Run the Project**:
+4. **Build the Project**:
 
    You can start the project for development using the following command:
 
    ```bash
-   bun run dev
+   bun run build
    ```
 
 ## Usage
