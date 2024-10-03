@@ -1,0 +1,7 @@
+export enum BASE_VIEWPORTS {
+  EXTRA_SMALL = 400,
+  SMALL = 768,
+  MEDIUM = 1200,
+  LARGE = 1600,
+  EXTRA_LARGE = 2000,
+}
