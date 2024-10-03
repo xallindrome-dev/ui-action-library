@@ -1,6 +1,6 @@
 {
   "name": "@umbrage-studios/ui-action-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/ui-action-library.umd.js",
   "module": "dist/ui-action-library.esm.js",
   "types": "dist/index.d.ts",
@@ -9,17 +9,29 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
+    "publish": "bun run build && bun run version:patch",
+    "publish:minor": "bun run build && bun run version:minor",
+    "publish:major": "bun run build && bun run version:major",
     "build": "rollup -c",
     "dev": "vite",
     "test": "vitest",
     "lint": "eslint . --ext .ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "version:patch": "npm version patch && npm publish",
+    "version:minor": "npm version minor && npm publish",
+    "version:major": "npm version major && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "bun run build && npm version patch && git add ."
+    }
   },
   "devDependencies": {
     "@types/bun": "latest",
     "eslint": "^9.11.1",
     "husky": "^9.1.6",
     "jsdom": "^25.0.1",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3"
   },
   "peerDependencies": {
