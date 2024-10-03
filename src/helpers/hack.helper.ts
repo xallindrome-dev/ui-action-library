@@ -10,5 +10,10 @@
 export const focus = (selector: string): void => {
   // hack until ref fixed
   const element = document.querySelectorAll(selector)[0] as HTMLInputElement;
+
+  if (!element) {
+    return;
+  }
+
   element.focus();
 };
