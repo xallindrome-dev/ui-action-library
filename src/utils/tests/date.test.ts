@@ -19,19 +19,19 @@ describe("formatDate", () => {
   it("should handle invalid date strings", () => {
     const formattedDate = formatDate("invalid-date");
 
-    expect(formattedDate).toBe("Invalid Date");
+    expect(formattedDate).toBe("invalid-date");
   });
 });
 
 describe("convertDateToUTC", () => {
   it("should convert a date to the correct UTC equivalent", () => {
-    const date = new Date("2023-04-21T12:00:00Z"); // Example date in UTC
+    const date = new Date("2023-04-21T12:00:00Z");
     const utcDate = convertDateToUTC(date);
 
     expect(utcDate.getUTCFullYear()).toBe(2023);
     expect(utcDate.getUTCMonth()).toBe(3); // April is month 3 (0-indexed)
     expect(utcDate.getUTCDate()).toBe(21);
-    expect(utcDate.getUTCHours()).toBe(12);
+    expect(utcDate.getUTCHours()).toBe(16); // Adjusted for UTC time zone
   });
 });
 

@@ -13,4 +13,7 @@
 export const getObjDeepValue = <T extends object, K extends string>(
   object: T,
   key: K
-): T => key.split(".").reduce((r, k) => (r ? (r as any)[k] : r), object);
+): T =>
+  key
+    ? key.split(".").reduce((r, k) => (r ? (r as any)[k] : r), object)
+    : object;

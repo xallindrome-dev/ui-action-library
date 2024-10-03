@@ -9,6 +9,11 @@ import type { DateHourRange } from "../models/Date";
  */
 export const formatDate = (date: string): string => {
   const dt = new Date(date + " ");
+
+  if (dt.toString() === "Invalid Date") {
+    return date;
+  }
+
   const month = [
     "January",
     "February",

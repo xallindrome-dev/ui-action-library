@@ -2,11 +2,9 @@
 
 import { describe, expect, it, vi } from "vitest";
 import { numberFormatify } from "../numbers.helper";
-import { isNullEmptyOrUndefined } from "../strings.helper";
 
-// Mock the `isNullEmptyOrUndefined` function
 vi.mock("./strings.helper", () => ({
-  isNullEmptyOrUndefined: vi.fn(),
+  isNullEmptyOrUndefined: vi.fn().mockReturnValue(true),
 }));
 
 describe("numberFormatify", () => {
@@ -25,8 +23,6 @@ describe("numberFormatify", () => {
   });
 
   it("should return an empty string if value is empty", () => {
-    (isNullEmptyOrUndefined as any).mockReturnValue(true);
-
     const formattedValueEmpty = numberFormatify("");
     expect(formattedValueEmpty).toBe("");
   });

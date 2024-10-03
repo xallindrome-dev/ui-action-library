@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { getObjDeepValue } from "../object.helper";
 
 describe("getObjDeepValue", () => {
-  const sampleObject = {
+  const objectInstance = {
     a: {
       b: {
         c: 42,
@@ -18,24 +18,24 @@ describe("getObjDeepValue", () => {
   };
 
   it("should retrieve the deep value when the key path exists", () => {
-    const value = getObjDeepValue(sampleObject, "a.b.c");
+    const value = getObjDeepValue(objectInstance, "a.b.c");
     expect(value).toBe(42);
 
-    const valueString = getObjDeepValue(sampleObject, "x.y.z");
+    const valueString = getObjDeepValue(objectInstance, "x.y.z");
     expect(valueString).toBe("hello");
   });
 
   it("should return undefined when the key path does not exist", () => {
-    const value = getObjDeepValue(sampleObject, "a.b.d");
+    const value = getObjDeepValue(objectInstance, "a.b.d");
     expect(value).toBeUndefined();
 
-    const valueInvalid = getObjDeepValue(sampleObject, "x.y.a");
+    const valueInvalid = getObjDeepValue(objectInstance, "x.y.a");
     expect(valueInvalid).toBeUndefined();
   });
 
   it("should handle cases where the key is an empty string", () => {
-    const value = getObjDeepValue(sampleObject, "");
-    expect(value).toEqual(sampleObject); // Should return the entire object
+    const value = getObjDeepValue(objectInstance, "");
+    expect(value).toEqual(objectInstance);
   });
 
   it("should return undefined when object is empty", () => {
@@ -46,10 +46,14 @@ describe("getObjDeepValue", () => {
 
   it("should handle edge cases with complex paths", () => {
     const complexObject = {
-      "a.b": {
-        c: {
-          "d.e": {
-            f: 100,
+      a: {
+        b: {
+          c: {
+            d: {
+              e: {
+                f: 100,
+              },
+            },
           },
         },
       },

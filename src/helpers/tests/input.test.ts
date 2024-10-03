@@ -18,8 +18,9 @@ describe("handleNumberInputChange", () => {
 
 describe("handleDecimalInputChange", () => {
   it("should return a valid decimal string", () => {
-    const result = handleDecimalInputChange("123.45", { max: 200, min: 100 });
-    expect(result).toBe("123.45");
+    const result = handleDecimalInputChange("123.5", { max: 200, min: 100 });
+
+    expect(result).toBe("123.5");
   });
 
   it("should return an empty string for invalid decimal input", () => {

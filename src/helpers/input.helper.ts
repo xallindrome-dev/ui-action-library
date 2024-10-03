@@ -46,6 +46,7 @@ export const handleNumberInputChange = (
  *  - `maxLength` (optional): The maximum length of the input string. Defaults to Infinity.
  *
  * @returns A valid decimal string, or an empty string if the input is invalid or does not meet the constraints.
+ * Note: This function currently doesn't handle the case where the input has multiple decimal points.
  */
 export const handleDecimalInputChange = (
   value: string,

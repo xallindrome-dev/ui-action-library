@@ -38,7 +38,7 @@ export const toTitleCase = (value?: string | null): string => {
  * or just the first letter of the first word, capitalized. Returns an empty string if input is invalid.
  */
 export const nameToTwoLetters = (name?: string | null) => {
-  if (!name) return name;
+  if (!name) return name || "";
 
   const names = name
     .trim()
