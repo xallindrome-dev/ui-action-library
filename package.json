@@ -9,14 +9,20 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "patch": "bun run build && bun run version:patch",
-    "minor": "bun run build && bun run version:minor",
-    "major": "bun run build && bun run version:major",
     "build": "rollup -c",
     "dev": "vite",
     "test": "vitest",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint-fix": "eslint --fix ./src",
+    "lint-staged": "lint-staged",
     "format": "prettier --write .",
+    "format:repo": "npm run format && npm run lint-fix",
+    "prettier": "prettier --check ./src",
+    "typecheck": "tsc && tsc -p",
+    "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
+    "patch": "bun run build && bun run version:patch",
+    "minor": "bun run build && bun run version:minor",
+    "major": "bun run build && bun run version:major",
     "version:patch": "npm version patch && npm publish",
     "version:minor": "npm version minor && npm publish",
     "version:major": "npm version major && npm publish"
@@ -26,13 +32,24 @@
       "pre-commit": "bun run build && npm version patch && git add ."
     }
   },
+  "lint-staged": {
+    "src/**/*.(ts|tsx|js|jsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/**/*.(css|scss)": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/react": "^18.3.11",
     "eslint": "^9.11.1",
     "husky": "^9.1.6",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "react-dom": "^18.3.1"
   },
   "peerDependencies": {
     "typescript": "^5.6.2"
@@ -41,10 +58,17 @@
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.0",
+    "@testing-library/react": "^16.0.1",
+    "@vitejs/plugin-react": "^4.3.2",
+    "react": "^18.3.1",
+    "react-router-dom": "^6.26.2",
     "rollup": "^4.24.0",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.7.0",
     "vite": "^5.4.8",
     "vitest": "^2.1.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
