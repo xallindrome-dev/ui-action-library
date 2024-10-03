@@ -46,7 +46,6 @@ export const handleNumberInputChange = (
  *  - `maxLength` (optional): The maximum length of the input string. Defaults to Infinity.
  *
  * @returns A valid decimal string, or an empty string if the input is invalid or does not meet the constraints.
- * Note: This function currently doesn't handle the case where the input has multiple decimal points.
  */
 export const handleDecimalInputChange = (
   value: string,
@@ -56,17 +55,21 @@ export const handleDecimalInputChange = (
     max = Number.MAX_SAFE_INTEGER,
     min = Number.MIN_SAFE_INTEGER,
     maxLength = Infinity,
+    decimalPlaces = 1,
   } = options;
   let input = value.replace(/[^\d.]/g, "");
 
-  const validInputPattern = /^(\d+(\d{3})*(\.\d{1})?)?$/;
-  const inputLength = input.length;
-  const hasOneDecimal = input.split(".").length - 1 === 1;
-
   if (input === "") {
     return "";
-  } else if (
-    validInputPattern.test(input) ||
+  }
+
+  const decimalPattern = new RegExp(`^\\d+(\\.\\d{1,${decimalPlaces}})?$`);
+  const inputLength = input.length;
+  const numberOfDecimals = input.split(".").length - 1;
+  const hasOneDecimal = numberOfDecimals === 1;
+
+  if (
+    decimalPattern.test(input) ||
     (input.lastIndexOf(".") === inputLength - 1 && hasOneDecimal)
   ) {
     const number = parseFloat(input);
