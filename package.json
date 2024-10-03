@@ -9,9 +9,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "publish": "bun run build && bun run version:patch",
-    "publish:minor": "bun run build && bun run version:minor",
-    "publish:major": "bun run build && bun run version:major",
+    "patch": "bun run build && bun run version:patch",
+    "minor": "bun run build && bun run version:minor",
+    "major": "bun run build && bun run version:major",
     "build": "rollup -c",
     "dev": "vite",
     "test": "vitest",
