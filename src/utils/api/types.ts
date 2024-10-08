@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category API Helpers
+ */
+
 import type { HttpResponse, RequestConfig } from "../../types";
 
 export interface HttpClient {

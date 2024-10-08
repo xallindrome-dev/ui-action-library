@@ -22,7 +22,7 @@
     "prettier": "prettier --check ./src",
     "typecheck": "tsc && tsc -p",
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
-    "build:docs": "bun run typedoc --out docs src --categorizeByGroup",
+    "build:docs": "bun run typedoc",
     "patch": "bun run build && bun run version:patch",
     "minor": "bun run build && bun run version:minor",
     "major": "bun run build && bun run version:major",

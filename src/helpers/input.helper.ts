@@ -1,3 +1,8 @@
+/**
+ * @module Helpers
+ * @category Input Helpers
+ */
+
 import type { InputOptions } from "../models/Input";
 
 /**

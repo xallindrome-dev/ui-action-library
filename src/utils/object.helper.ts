@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category Object Helpers
+ */
+
 import type { KeyObjectDef } from "../types";
 
 /**

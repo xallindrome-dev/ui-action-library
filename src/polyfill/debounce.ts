@@ -1,3 +1,8 @@
+/**
+ * @module Polyfills
+ * @category Polyfill Helpers
+ */
+
 type DebouncedFunction<T extends (...args: any[]) => any> = (
   ...args: Parameters<T>
 ) => void;

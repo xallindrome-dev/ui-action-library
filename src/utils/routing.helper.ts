@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category Routing Helpers
+ */
+
 import type { KeyValuePair } from "../types";
 
 /**

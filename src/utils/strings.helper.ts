@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category Strings Helpers
+ */
+
 import type { NullableValue } from "../models/Object";
 
 /**

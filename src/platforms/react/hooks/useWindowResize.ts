@@ -1,3 +1,8 @@
+/**
+ * @module React_Platform
+ * @category Hooks
+ */
+
 import { useEffect, useLayoutEffect, useState } from "react";
 import { debounce } from "../../../polyfill/debounce";
 

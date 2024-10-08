@@ -1,3 +1,8 @@
+/**
+ * @module React_Platform
+ * @category Hooks
+ */
+
 import { useLocation } from "react-router-dom";
 import { stripLink } from "../../../utils";
 

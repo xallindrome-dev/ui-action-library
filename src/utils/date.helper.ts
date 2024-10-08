@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category Date Helpers
+ */
+
 import type { DateHourRange } from "../models/Date";
 
 /**

@@ -1,3 +1,8 @@
+/**
+ * @module React_Platform
+ * @category Scroll Helpers
+ */
+
 import type { RefObject } from "react";
 
 /**

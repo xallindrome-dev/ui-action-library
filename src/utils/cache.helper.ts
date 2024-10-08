@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category Cache Helpers
+ */
+
 import type { CacheData } from "../types";
 
 /**

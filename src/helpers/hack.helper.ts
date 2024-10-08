@@ -1,4 +1,9 @@
 /**
+ * @module Helpers
+ * @category Hack Helpers
+ */
+
+/**
  * Focuses on the first element in the document that matches the given CSS selector.
  *
  * @param selector - A string representing a CSS selector used to identify the element to focus on.

@@ -1,3 +1,8 @@
+/**
+ * @module React_Platform
+ * @category Hooks
+ */
+
 import { useEffect, useState } from "react";
 
 /**

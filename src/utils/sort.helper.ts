@@ -1,4 +1,9 @@
 /**
+ * @module Utils
+ * @category Sort Helpers
+ */
+
+/**
  * Sorts two strings in alphanumeric ascending order, considering special characters,
  * numbers, and letters. The sorting prioritizes special characters, then numbers, and
  * finally letters, all in ascending lexicographic order.

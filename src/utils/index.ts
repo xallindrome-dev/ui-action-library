@@ -1,6 +1,9 @@
 // Export api handling utilities
 export * from "./api/index";
 
+// Export array handling utilities
+export * from "./array.helper";
+
 // Export cache handling utilities
 export * from "./cache.helper";
 

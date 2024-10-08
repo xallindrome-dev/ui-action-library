@@ -1,3 +1,8 @@
+/**
+ * @module Utils
+ * @category Numbers Helpers
+ */
+
 import { isNullEmptyOrUndefined } from "./strings.helper";
 
 const defaultOptions: Intl.NumberFormatOptions = {
