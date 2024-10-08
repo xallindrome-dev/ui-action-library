@@ -2,7 +2,7 @@
 
 ## Overview
 
-**UI Action Library** is a collection of utility functions designed for internal use within our company. It provides various helpers, including string manipulation, date handling, and more. This package is private and distributed via GitHub Packages within our organization.
+**UI Action Library** is a collection of utility functions designed for wide spread use. It provides various helpers, including string manipulation, date handling, and more.
 
 ## Table of Contents
 
@@ -13,18 +13,15 @@
 5. [Building](#building)
 6. [Publishing](#publishing)
 7. [Contributing](#contributing)
-8. [Package Management & GitHub Packages](#package-management--github-packages)
-9. [License](#license)
+8. [License](#license)
 
 ## Installation
 
-To install this package in your project, authenticate to GitHub Packages and run the following command:
+To install this package in your project, run the following command:
 
 ```bash
 bun add ui-action-library
 ```
-
-Make sure you have your GitHub Personal Access Token (PAT) with the necessary permissions configured in your `.npmrc`.
 
 ## Development Setup
 
@@ -106,9 +103,9 @@ The build files will be placed in the `dist/` directory.
 
 ## Publishing
 
-### GitHub Packages Setup
+### Packages Setup
 
-This package is distributed via **GitHub Packages** and only accessible to members of the organization.
+This package is distributed via **NPM Packages** and only accessible to members of the organization.
 
 1. **Authentication**:
 
@@ -124,7 +121,7 @@ This package is distributed via **GitHub Packages** and only accessible to membe
    npm publish
    ```
 
-   This will publish the package to the GitHub Packages registry.
+   This will publish the package to the NPM Packages registry.
 
 ## Contributing
 
@@ -135,13 +132,12 @@ When contributing to this repository, please follow these guidelines:
 3. **Code Style**: Use ESLint and Prettier for consistent code formatting.
 4. **Testing**: Ensure all changes are covered with unit tests and that existing tests pass.
 
-## Package Management & GitHub Packages
+## Package Management
 
-This project uses **GitHub Packages** to distribute the library internally. Make sure to:
+This project uses **NPM Packages** to distribute the library internally. Make sure to:
 
 - Use a **Personal Access Token** (PAT) with the appropriate scopes to authenticate.
 - Ensure that the **repository is private** to restrict public access.
-- Verify that **npm** is configured correctly in the `.npmrc` file for internal installations.
 
 ## License
 
