@@ -1,7 +1,6 @@
 // getObjDeepValue.test.ts
-
-import { describe, expect, it } from "vitest";
-import { getObjDeepValue } from "../object.helper";
+import type { KeyObjectDef } from "../../types";
+import { getObjDeepValue, groupValues } from "../object.helper";
 
 describe("getObjDeepValue", () => {
   const objectInstance = {
@@ -60,5 +59,78 @@ describe("getObjDeepValue", () => {
     };
     const value = getObjDeepValue(complexObject, "a.b.c.d.e.f");
     expect(value).toBe(100);
+  });
+});
+
+describe("groupValues", () => {
+  it("should group objects by a specified key", () => {
+    const list: KeyObjectDef[] = [
+      { category: "fruit", name: "apple" },
+      { category: "fruit", name: "banana" },
+      { category: "vegetable", name: "carrot" },
+    ];
+    const result = groupValues(list, "category");
+
+    expect(result).toEqual({
+      fruit: [
+        { category: "fruit", name: "apple" },
+        { category: "fruit", name: "banana" },
+      ],
+      vegetable: [{ category: "vegetable", name: "carrot" }],
+    });
+  });
+
+  it("should return an empty object for an empty list", () => {
+    const list: KeyObjectDef[] = [];
+    const result = groupValues(list, "category");
+
+    expect(result).toEqual({});
+  });
+
+  it("should handle cases where some objects do not contain the specified key", () => {
+    const list: KeyObjectDef[] = [
+      { category: "fruit", name: "apple" },
+      { name: "banana" },
+      { category: "vegetable", name: "carrot" },
+    ];
+    const result = groupValues(list, "category");
+
+    expect(result).toEqual({
+      fruit: [{ category: "fruit", name: "apple" }],
+      undefined: [{ name: "banana" }],
+      vegetable: [{ category: "vegetable", name: "carrot" }],
+    });
+  });
+
+  it("should handle cases where all objects have the same key value", () => {
+    const list: KeyObjectDef[] = [
+      { category: "fruit", name: "apple" },
+      { category: "fruit", name: "banana" },
+      { category: "fruit", name: "cherry" },
+    ];
+    const result = groupValues(list, "category");
+
+    expect(result).toEqual({
+      fruit: [
+        { category: "fruit", name: "apple" },
+        { category: "fruit", name: "banana" },
+        { category: "fruit", name: "cherry" },
+      ],
+    });
+  });
+
+  it("should handle cases where each object has a unique key value", () => {
+    const list: KeyObjectDef[] = [
+      { id: "1", value: "a" },
+      { id: "2", value: "b" },
+      { id: "3", value: "c" },
+    ];
+    const result = groupValues(list, "id");
+
+    expect(result).toEqual({
+      "1": [{ id: "1", value: "a" }],
+      "2": [{ id: "2", value: "b" }],
+      "3": [{ id: "3", value: "c" }],
+    });
   });
 });

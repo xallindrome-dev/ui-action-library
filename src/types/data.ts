@@ -1,4 +1,13 @@
+import type { Value } from "../models";
 import type { Paths } from "./literals";
+
+export interface KeyValuePair {
+  [key: string]: Value;
+}
+
+export interface KeyObjectDef extends Object {
+  [key: string]: any;
+}
 
 export interface ColDefs<T> {
   key: Paths<T>;
@@ -14,4 +23,9 @@ export interface ColDefs<T> {
 export enum SortOrder {
   ASC = "asc",
   DESC = "desc",
+}
+
+export interface CacheData {
+  data: any;
+  timestamp: number;
 }

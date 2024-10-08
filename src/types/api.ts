@@ -54,3 +54,15 @@ export interface HttpMeta<T> {
   aborted: boolean;
   condition: boolean;
 }
+
+export interface RequestConfig {
+  headers?: Record<string, string>;
+  authorization?: string;
+  [key: string]: any;
+}
+
+export interface HttpResponse<T> {
+  data: T;
+  status: number;
+  headers: Record<string, string>;
+}

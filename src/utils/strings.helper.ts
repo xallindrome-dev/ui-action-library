@@ -1,4 +1,4 @@
-import type { Value } from "../models/Object";
+import type { NullableValue } from "../models/Object";
 
 /**
  * Checks if a value is null, undefined, or an empty string.
@@ -8,7 +8,7 @@ import type { Value } from "../models/Object";
  *
  * @returns `true` if the value is null, undefined, or an empty string, otherwise `false`.
  */
-export const isNullEmptyOrUndefined = (value?: Value): boolean => {
+export const isNullEmptyOrUndefined = (value?: NullableValue): boolean => {
   return value === null || value === undefined || value === "";
 };
 
