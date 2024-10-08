@@ -21,7 +21,7 @@
 To install this package in your project, authenticate to GitHub Packages and run the following command:
 
 ```bash
-npm install @umbrage-studios/ui-action-library --registry=https://npm.pkg.github.com/
+bun add ui-action-library
 ```
 
 Make sure you have your GitHub Personal Access Token (PAT) with the necessary permissions configured in your `.npmrc`.
@@ -33,7 +33,7 @@ Make sure you have your GitHub Personal Access Token (PAT) with the necessary pe
    First, clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/@umbrage-studios/ui-action-library.git
+   git clone https://github.com/@xallindrome-dev/ui-action-library.git
    cd my-library
    ```
 
@@ -51,15 +51,7 @@ Make sure you have your GitHub Personal Access Token (PAT) with the necessary pe
    npm install
    ```
 
-3. **Configure Authentication for GitHub Packages**:
-
-   Make sure you have a `.npmrc` file in the root of the project with your GitHub Packages authentication details:
-
-   ```bash
-   //npm.pkg.github.com/:_authToken=YOUR_PERSONAL_ACCESS_TOKEN
-   ```
-
-4. **Build the Project**:
+3. **Build the Project**:
 
    You can start the project for development using the following command:
 
@@ -72,10 +64,7 @@ Make sure you have your GitHub Personal Access Token (PAT) with the necessary pe
 This package provides various utility functions for string manipulation, date formatting, and more. Example usage:
 
 ```typescript
-import {
-  toTitleCase,
-  nameToTwoLetters,
-} from "@@umbrage-studios/ui-action-library";
+import { toTitleCase, nameToTwoLetters } from "ui-action-library";
 
 const title = toTitleCase("hello world"); // "Hello World"
 const initials = nameToTwoLetters("John Doe"); // "JD"
@@ -123,13 +112,11 @@ This package is distributed via **GitHub Packages** and only accessible to membe
 
 1. **Authentication**:
 
-   Make sure your `.npmrc` file contains your GitHub Personal Access Token (PAT) with the necessary scopes (`read:packages`, `write:packages`, and `repo`):
-
    ```bash
-   //npm.pkg.github.com/:_authToken=YOUR_PERSONAL_ACCESS_TOKEN
+   npm login
    ```
 
-2. **Publish to GitHub Packages**:
+2. **Publish to NPM**:
 
    After building the package, publish it using:
 

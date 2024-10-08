@@ -6,7 +6,7 @@ A big thank you to all the amazing people who have contributed to this project! 
 
 The following individuals are responsible for maintaining this project:
 
-- **[Andrew Wilson]** ([@aww-umbrage](https://github.com/aww-umbrage)) – Creator, Developer
+- **[Andrew Wilson]** ([@xallindrome-dev](https://github.com/xallindrome-dev)) – Creator, Developer
 - **[Colton Somes]** ([@csomesUmbrage](https://github.com/csomesUmbrage)) – Developer
 - **[Gerardo Mayboca]** ([@guerrimau-umbrage](https://github.com/guerrimau-umbrage)) – Developer
 

@@ -13,6 +13,7 @@
     "build": "rollup -c",
     "dev": "vite",
     "test": "vitest",
+    "docs": "bunx serve docs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint-fix": "eslint --fix ./src",
     "lint-staged": "lint-staged",
@@ -21,6 +22,7 @@
     "prettier": "prettier --check ./src",
     "typecheck": "tsc && tsc -p",
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
+    "build:docs": "bun run typedoc --out docs src --categorizeByGroup",
     "patch": "bun run build && bun run version:patch",
     "minor": "bun run build && bun run version:minor",
     "major": "bun run build && bun run version:major",
@@ -50,7 +52,8 @@
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "typedoc": "^0.26.8"
   },
   "peerDependencies": {
     "typescript": "^5.6.2"
